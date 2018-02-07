@@ -1,0 +1,6 @@
+curl --data "request_type=add_new&username=admin&password=jGrC4Kp3Nr30&question=Une%20question?&answer=Une%20réponse&tags=test;othertag" http://localhost:8080/netheos-challenge/faq
+curl --data "format=json&request_type=get_all&username=admin&password=jGrC4Kp3Nr30" http://localhost:8080/netheos-challenge/faq --get
+curl --data "format=json&request_type=get_match&match=it" http://localhost:8080/netheos-challenge/faq --get
+
+use netheos
+db.faq.insertMany([{question:"I have ideas, how can I send them to you ?", answer:"E-mails and phone numbers can be found on our Contact page", tags:["contact"]}, {question:"Is it true the developper behind this is very competent and handsome ?", answer:"Yes, it is.", tags:["meta", "important"]}, {question:"How do I join the team ?", answer:"Send your CV and cover letter to the e-mail provided on our recruitement page. Also check https://github.com/Netheos/Challenge-developpement-backend", tags:["contact"]}])
